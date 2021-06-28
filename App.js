@@ -129,7 +129,7 @@ const App = () => {
       <View style={styles.container}>
         <StatusBar barStyle = "light-content" hidden = {false} backgroundColor = 'black' translucent={false} />
           <View style={styles.result}>
-            <Text style={styles.resultText}> {result}</Text>
+            <Text style={styles.resultText}> {result ? thousands_separators(result) : result}</Text>
           </View>
           <View style={styles.calculation}>
               <Text style={styles.calculationText}>{calc}</Text>
@@ -161,13 +161,14 @@ const styles = StyleSheet.create({
   },
   resultText:{
     color:'gray',
-    fontSize:20,
-    marginRight:5,
+    fontSize:30,
+    marginRight:10,
+    fontWeight:'bold'
     
   },
   calculationText:{
     fontSize:17,
-    marginRight:5,
+    marginRight:10,
     color:"gray"
   },
   calculation:{
@@ -188,7 +189,7 @@ const styles = StyleSheet.create({
   },
   numbers:{
     flex:3,// make view as flex so that u can divide the screen horizontally
-    backgroundColor:'grey'
+    backgroundColor:'orange'
   },
   operations:{
     flex:1,
@@ -209,13 +210,14 @@ const styles = StyleSheet.create({
     color:'#fff'
   },
   signature:{alignSelf:'center', 
-    color:'grey', 
+    color:'#000', 
     marginBottom:5, 
-    fontSize:10, 
+    fontSize:12, 
     fontWeight:'bold',
     position:'absolute',
     bottom:0,
-    left:10
+    left:10,
+    fontWeight:'bold'
   }
 });
 
